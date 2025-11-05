@@ -1,0 +1,9 @@
+[submodule "uge8_OrderDocker"]
+	path = uge8_OrderDocker
+	url = https://github.com/elemming-specialisterne/uge8_OrderDocker
+[submodule "uge6_DBService"]
+	path = uge6_DBService
+	url = https://github.com/elemming-specialisterne/uge6_DBService
+[submodule "uge6_ProductService"]
+	path = uge6_ProductService
+	url = https://github.com/elemming-specialisterne/uge6_ProductService
