@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  productservice:
+    build:
+      context: ./uge6_ProductService/ProductService/
+      dockerfile: ProductService/Dockerfile
+    container_name: productservice
+    ports:
+      - "7125:7125"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=appdb;Username=app;Password=secret;Pooling=true
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  orderservice:
+    build:
+      context: ./uge8_OrderDocker
+      dockerfile: OrderService/Dockerfile
+    container_name: orderservice
+    ports:
+      - "5028:5028"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Port=5432;Database=appdb;User Id=app;Password=secret;
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge
