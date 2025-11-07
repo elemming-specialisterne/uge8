@@ -36,22 +36,22 @@ The application consists of the following services:
 
 2. **Start all services (production mode):**
    ```bash
-   docker-compose -f docker-compose.yml -f uge6_DBService/db/docker-compose.yml up -d
+   docker-compose -f docker-compose.yaml -f uge6_DBService/db/docker-compose.yml up -d
    ```
 
 3. **Start all services (debug mode with VS Code debugging support):**
    ```bash
-   docker-compose -f docker-compose.yml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml up -d
+   docker-compose -f docker-compose.yaml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml up -d
    ```
 
 4. **Stop all services:**
    ```bash
-   docker-compose -f docker-compose.yml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml down
+   docker-compose -f docker-compose.yaml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml down
    ```
 
 5. **Stop all services and remove volumes (fresh database):**
    ```bash
-   docker-compose -f docker-compose.yml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml down -v
+   docker-compose -f docker-compose.yaml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml down -v
    ```
 
 ## Service URLs
@@ -93,7 +93,7 @@ The database includes the following tables:
 ### Project Structure
 ```
 uge8/
-├── docker-compose.yml              # Main services configuration
+├── docker-compose.yaml              # Main services configuration
 ├── compose.debug.yaml              # Debug configuration with VS Code support
 ├── uge6_ProductService/            # Product service
 │   └── ProductService/
@@ -212,7 +212,7 @@ docker logs uge8-postgrest-1
 ### Rebuilding Services
 To rebuild a specific service after code changes:
 ```bash
-docker-compose -f docker-compose.yml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml up -d --build productservice
+docker-compose -f docker-compose.yaml -f compose.debug.yaml -f uge6_DBService/db/docker-compose.yml up -d --build productservice
 ```
 
 ## Contributing
